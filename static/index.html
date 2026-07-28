@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Investment Thesis Generator</title>
+    <!-- Links to your external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- External Libraries for Charts and Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📈 High-Growth Thesis Generator</h1>
+            <p>Enter a stock ticker to generate an AI-powered investment evaluation.</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <form id="thesis-form">
+                    <div class="form-group">
+                        <label for="ticker">Company Ticker</label>
+                        <input type="text" id="ticker" name="ticker" placeholder="e.g., NVDA, AAPL" required autocomplete="off">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="horizon">Investment Horizon</label>
+                            <select id="horizon" name="horizon">
+                                <option value="short">Short-term (< 1 year)</option>
+                                <option value="medium" selected>Medium-term (1-3 years)</option>
+                                <option value="long">Long-term (3+ years)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="risk">Risk Tolerance</label>
+                            <select id="risk" name="risk">
+                                <option value="low">Low</option>
+                                <option value="moderate" selected>Moderate</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-btn">Generate Thesis</button>
+                </form>
+            </div>
+
+            <div class="card result-card" id="result-container" style="display: none;">
+                <h2>12-Month Price History</h2>
+                <!-- This canvas is where Chart.js will draw -->
+                <canvas id="priceChart" style="width: 100%; max-height: 300px; margin-bottom: 2rem;"></canvas>
+
+                <h2>Investment Thesis</h2>
+                <div id="thesis-output"></div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Links to your external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

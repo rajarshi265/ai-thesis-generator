@@ -1,0 +1,6 @@
+fastapi[standard]
+yfinance
+pandas
+google-genai
+python-dotenv
+pydantic
